@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "8201f364-8554-449a-9f7c-40fab13a3d56",
+		"name": "Bulk TP Update",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12618884",
+		"_collection_link": "https://midpoint.postman.co/workspace/Team-Workspace~54acb2a4-91b0-4162-89e3-12a5c043a198/collection/12618884-8201f364-8554-449a-9f7c-40fab13a3d56?action=share&source=collection_link&creator=12618884"
+	},
+	"item": [
+		{
+			"name": "Bulk TP Update",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "tIm5it$n0w",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:updateTransPattern sequence=\"?\">\r\n         \r\n         \r\n         <pattern>{{pattern}}</pattern>\r\n         <routePartitionName>{{pt}}</routePartitionName>\r\n        \r\n         <calledPartyTransformationMask>+{{pnum}}</calledPartyTransformationMask>\r\n         <prefixDigitsOut>{{prefix}}</prefixDigitsOut>\r\n         \r\n      </ns:updateTransPattern>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

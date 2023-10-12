@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "8b78a534-75a0-46c0-96f2-d51bdb56d9ce",
+		"name": "CUC Delete User NA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12618884",
+		"_collection_link": "https://midpoint.postman.co/workspace/Team-Workspace~54acb2a4-91b0-4162-89e3-12a5c043a198/collection/12618884-8b78a534-75a0-46c0-96f2-d51bdb56d9ce?action=share&source=collection_link&creator=12618884"
+	},
+	"item": [
+		{
+			"name": "Fetch User Settings using Alias Starts with",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonResponse = pm.response.json();\r",
+							"pm.globals.set(\"ObjectID\", jsonResponse.User.URI);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "tIm5it$n0w",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cxnadmin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://10.80.10.17/vmrest/users?query=(alias%20startswith%20testmb)",
+					"protocol": "https",
+					"host": [
+						"10",
+						"80",
+						"10",
+						"17"
+					],
+					"path": [
+						"vmrest",
+						"users"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "(alias%20startswith%20testmb)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete VM Box",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "tIm5it$n0w",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cxnadmin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://10.80.10.17:8443{{ObjectID}}",
+					"protocol": "https",
+					"host": [
+						"10",
+						"80",
+						"10",
+						"17"
+					],
+					"port": "8443{{ObjectID}}"
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "URI-Response,response",
+			"value": ""
+		},
+		{
+			"key": "URI",
+			"value": ""
+		}
+	]
+}

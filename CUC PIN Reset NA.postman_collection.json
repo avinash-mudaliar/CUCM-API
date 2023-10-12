@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "fb145d43-e9f7-485f-8324-2ec0831f4030",
+		"name": "CUC PIN Reset NA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12618884",
+		"_collection_link": "https://midpoint.postman.co/workspace/Team-Workspace~54acb2a4-91b0-4162-89e3-12a5c043a198/collection/12618884-fb145d43-e9f7-485f-8324-2ec0831f4030?action=share&source=collection_link&creator=12618884"
+	},
+	"item": [
+		{
+			"name": "Fetch User Settings using Alias Starts with",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonResponse = pm.response.json();\r",
+							"pm.globals.set(\"ObjectID\", jsonResponse.User.URI);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "tIm5it$n0w",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cxnadmin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://10.80.10.17/vmrest/users?query=(alias%20startswith%20{{userid}})",
+					"protocol": "https",
+					"host": [
+						"10",
+						"80",
+						"10",
+						"17"
+					],
+					"path": [
+						"vmrest",
+						"users"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "(alias%20startswith%20{{userid}})"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update VM PIN",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "tIm5it$n0w",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "cxnadmin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Credentials\" : \"914852\",\r\n    \"HackCount\" : 0,\r\n    \"TimeHacked\" : []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://10.80.10.17{{ObjectID}}/credential/pin",
+					"protocol": "https",
+					"host": [
+						"10",
+						"80",
+						"10",
+						"17{{ObjectID}}"
+					],
+					"path": [
+						"credential",
+						"pin"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "URI-Response,response",
+			"value": ""
+		},
+		{
+			"key": "URI",
+			"value": ""
+		}
+	]
+}

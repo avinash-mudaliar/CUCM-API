@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "f173b6f2-a07c-4df3-8db2-05cafc9aee1c",
+		"name": "NA LDAP Sync",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12618884",
+		"_collection_link": "https://midpoint.postman.co/workspace/Team-Workspace~54acb2a4-91b0-4162-89e3-12a5c043a198/collection/12618884-f173b6f2-a07c-4df3-8db2-05cafc9aee1c?action=share&source=collection_link&creator=12618884"
+	},
+	"item": [
+		{
+			"name": "LDAP Sync for + Global",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:doLdapSync sequence=\"?\">\r\n         <!--You have a CHOICE of the next 2 items at this level-->\r\n         <name>Trane + Global</name>\r\n         <sync>True</sync>\r\n      </ns:doLdapSync>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "tIm5it$n0w",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "api",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

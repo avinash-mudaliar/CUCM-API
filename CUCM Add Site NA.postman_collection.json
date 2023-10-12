@@ -1,0 +1,582 @@
+{
+	"info": {
+		"_postman_id": "37058f64-fb3c-4414-b2ec-614278ec75cb",
+		"name": "CUCM Add Site NA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12618884",
+		"_collection_link": "https://midpoint.postman.co/workspace/Team-Workspace~54acb2a4-91b0-4162-89e3-12a5c043a198/collection/12618884-37058f64-fb3c-4414-b2ec-614278ec75cb?action=share&source=collection_link&creator=12618884"
+	},
+	"item": [
+		{
+			"name": "Add AAR PT",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addRoutePartition sequence=\"?\">\r\n         <routePartition>\r\n            <name>{{site}}-AAR-PT</name>\r\n            <description>{{site}} Site specific AAR PT</description>\r\n         </routePartition>\r\n      </ns:addRoutePartition>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add OFFICE PT",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "site",
+						"value": "BNG",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addRoutePartition sequence=\"?\">\r\n         <routePartition>\r\n            <name>{{site}}-OFFICE-PT</name>\r\n            <description>{{site}} Site specific office PT</description>\r\n         </routePartition>\r\n      </ns:addRoutePartition>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add PSTN PT",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addRoutePartition sequence=\"?\">\r\n         <routePartition>\r\n            <name>{{site}}-PSTN-PT</name>\r\n            <description>{{site}} Site specific PSTN calls</description>\r\n         </routePartition>\r\n      </ns:addRoutePartition>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add INBOUND XLATE PT",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addRoutePartition sequence=\"?\">\r\n         <routePartition>\r\n            <name>{{site}}-INBOUND-XLATE-PT</name>\r\n            <description>{{site}} Site specific gateway xlate</description>\r\n         </routePartition>\r\n      </ns:addRoutePartition>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add OUTBOUND ANI PT",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addRoutePartition sequence=\"?\">\r\n         <routePartition>\r\n            <name>{{site}}-OUTBOUND-ANI-PT</name>\r\n            <description>{{site}} Global calling party xform</description>\r\n         </routePartition>\r\n      </ns:addRoutePartition>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add OUTBOUND DNIS PT",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addRoutePartition sequence=\"?\">\r\n         <routePartition>\r\n            <name>{{site}}-OUTBOUND-DNIS-PT</name>\r\n            <description>{{site}} Global called party xform</description>\r\n         </routePartition>\r\n      </ns:addRoutePartition>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add AAR CSS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addCss sequence=\"?\">\r\n         <css>\r\n            \r\n            <description>Site specific, Apply at device level</description>\r\n            \r\n            <members>\r\n               \r\n               <member>\r\n                  <routePartitionName uuid=\"?\">{{site}}-AAR-PT</routePartitionName>\r\n                  <index>1</index>\r\n\r\n               </member>\r\n                 <member>\r\n                  <routePartitionName uuid=\"?\">US-AAR-PSTN-PT</routePartitionName>\r\n                  <index>2</index>\r\n\r\n               </member>\r\n            </members>\r\n           \r\n            <name>{{site}}-AAR-CSS</name>\r\n         </css>\r\n      </ns:addCss>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add CF LCL CSS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addCss sequence=\"?\">\r\n         <css>\r\n            \r\n            <description>Apply at line call forward css Local</description>\r\n            \r\n            <members>\r\n               \r\n               <member>\r\n                  <routePartitionName uuid=\"?\">BLOCK-FRAUD-PT</routePartitionName>\r\n                  <index>1</index>\r\n\r\n               </member>\r\n                 <member>\r\n                  <routePartitionName uuid=\"?\">BLOCK-INTL-PT</routePartitionName>\r\n                  <index>2</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">BLOCK-LD-PT</routePartitionName>\r\n                  <index>3</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">{{site}}-OFFICE-PT</routePartitionName>\r\n                  <index>4</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">INTERNAL-PT</routePartitionName>\r\n                  <index>5</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Directory URI</routePartitionName>\r\n                  <index>6</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">SITE-CODE-PT</routePartitionName>\r\n                  <index>7</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Global Learned E164 Numbers</routePartitionName>\r\n                  <index>8</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Global Learned E164 Patterns</routePartitionName>\r\n                  <index>9</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Global Learned Enterprise Numbers</routePartitionName>\r\n                  <index>10</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Global Learned Enterprise Patterns</routePartitionName>\r\n                  <index>11</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">GDPR-PT</routePartitionName>\r\n                  <index>12</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">{{site}}-PSTN-PT</routePartitionName>\r\n                  <index>13</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">LOCAL-XLATE-PT</routePartitionName>\r\n                  <index>14</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">GLOBAL-XLATE-PT</routePartitionName>\r\n                  <index>15</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">VM-PT</routePartitionName>\r\n                  <index>16</index>\r\n\r\n               </member>\r\n            </members>\r\n           \r\n            <name>{{site}}-CF-LCL-CSS</name>\r\n         </css>\r\n      </ns:addCss>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add CF LD CSS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addCss sequence=\"?\">\r\n         <css>\r\n            \r\n            <description>Apply at line call forward css LD</description>\r\n            \r\n            <members>\r\n               \r\n               <member>\r\n                  <routePartitionName uuid=\"?\">BLOCK-FRAUD-PT</routePartitionName>\r\n                  <index>1</index>\r\n\r\n               </member>\r\n                 <member>\r\n                  <routePartitionName uuid=\"?\">BLOCK-INTL-PT</routePartitionName>\r\n                  <index>2</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">{{site}}-OFFICE-PT</routePartitionName>\r\n                  <index>3</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">INTERNAL-PT</routePartitionName>\r\n                  <index>4</index>\r\n\r\n               </member>\r\n\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Directory URI</routePartitionName>\r\n                  <index>5</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">SITE-CODE-PT</routePartitionName>\r\n                  <index>6</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Global Learned E164 Numbers</routePartitionName>\r\n                  <index>7</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Global Learned E164 Patterns</routePartitionName>\r\n                  <index>8</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Global Learned Enterprise Numbers</routePartitionName>\r\n                  <index>9</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Global Learned Enterprise Patterns</routePartitionName>\r\n                  <index>10</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">GDPR-PT</routePartitionName>\r\n                  <index>11</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">{{site}}-PSTN-PT</routePartitionName>\r\n                  <index>12</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">LOCAL-XLATE-PT</routePartitionName>\r\n                  <index>13</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">GLOBAL-XLATE-PT</routePartitionName>\r\n                  <index>14</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">VM-PT</routePartitionName>\r\n                  <index>15</index>\r\n\r\n               </member>\r\n            </members>\r\n           \r\n            <name>{{site}}-CF-LD-CSS</name>\r\n         </css>\r\n      </ns:addCss>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Device CSS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addCss sequence=\"?\">\r\n         <css>\r\n            \r\n            <description>Site specific, Apply at device level</description>\r\n            \r\n            <members>\r\n               \r\n               <member>\r\n                  <routePartitionName uuid=\"?\">{{site}}-OFFICE-PT</routePartitionName>\r\n                  <index>1</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">INTERNAL-PT</routePartitionName>\r\n                  <index>2</index>\r\n\r\n               </member>\r\n\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Directory URI</routePartitionName>\r\n                  <index>3</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">SITE-CODE-PT</routePartitionName>\r\n                  <index>4</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Global Learned E164 Numbers</routePartitionName>\r\n                  <index>5</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Global Learned E164 Patterns</routePartitionName>\r\n                  <index>6</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Global Learned Enterprise Numbers</routePartitionName>\r\n                  <index>7</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">Global Learned Enterprise Patterns</routePartitionName>\r\n                  <index>8</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">GDPR-PT</routePartitionName>\r\n                  <index>9</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">{{site}}-PSTN-PT</routePartitionName>\r\n                  <index>10</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">LOCAL-XLATE-PT</routePartitionName>\r\n                  <index>11</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">GLOBAL-XLATE-PT</routePartitionName>\r\n                  <index>12</index>\r\n\r\n               </member>\r\n\r\n               <member>\r\n                  <routePartitionName uuid=\"?\">VM-PT</routePartitionName>\r\n                  <index>13</index>\r\n\r\n               </member>\r\n            </members>\r\n           \r\n            <name>{{site}}-DEVICE-CSS</name>\r\n         </css>\r\n      </ns:addCss>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Inbound Gateway CSS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addCss sequence=\"?\">\r\n         <css>\r\n            \r\n            <description>Apply at Gateway inbound level</description>\r\n            \r\n            <members>\r\n               \r\n               <member>\r\n                  <routePartitionName uuid=\"?\">{{site}}-INBOUND-XLATE-PT</routePartitionName>\r\n                  <index>1</index>\r\n\r\n               </member>\r\n                 <member>\r\n                  <routePartitionName uuid=\"?\">INTERNAL-PT</routePartitionName>\r\n                  <index>2</index>\r\n\r\n               </member>\r\n            </members>\r\n           \r\n            <name>{{site}}-INBOUND-GATEWAY-CSS</name>\r\n         </css>\r\n      </ns:addCss>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Outbound ANI CSS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addCss sequence=\"?\">\r\n         <css>\r\n            \r\n            <description>Apply at Called Party Xform of Gateway</description>\r\n            \r\n            <members>\r\n               \r\n               <member>\r\n                  <routePartitionName uuid=\"?\">{{site}}-OUTBOUND-ANI-PT</routePartitionName>\r\n                  <index>1</index>\r\n\r\n               </member>\r\n                 <member>\r\n                  <routePartitionName uuid=\"?\">NANP-OUTBOUND-ANI-PT</routePartitionName>\r\n                  <index>2</index>\r\n\r\n               </member>\r\n            </members>\r\n           \r\n            <name>{{site}}-OUTBOUND-ANI-CSS</name>\r\n         </css>\r\n      </ns:addCss>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Outbound DNIS CSS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addCss sequence=\"?\">\r\n         <css>\r\n            \r\n            <description>Apply at Called Party Xform of Gateway</description>\r\n            \r\n            <members>\r\n               \r\n               <member>\r\n                  <routePartitionName uuid=\"?\">{{site}}-OUTBOUND-DNIS-PT</routePartitionName>\r\n                  <index>1</index>\r\n\r\n               </member>\r\n                 <member>\r\n                  <routePartitionName uuid=\"?\">NANP-OUTBOUND-DNIS-PT</routePartitionName>\r\n                  <index>2</index>\r\n\r\n               </member>\r\n            </members>\r\n           \r\n            <name>{{site}}-OUTBOUND-DNIS-CSS</name>\r\n         </css>\r\n      </ns:addCss>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add CDC",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addCommonDeviceConfig sequence=\"?\">\r\n         <commonDeviceConfig>\r\n            <name>{{site}}-CDC</name>\r\n            <softkeyTemplateName uuid=\"?\">IR-Standard User</softkeyTemplateName>\r\n            <networkHoldMohAudioSourceId>1-SampleAudioSource</networkHoldMohAudioSourceId>\r\n            <userHoldMohAudioSourceId>1-SampleAudioSource</userHoldMohAudioSourceId>\r\n         </commonDeviceConfig>\r\n      </ns:addCommonDeviceConfig>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "site",
+			"value": "BNG",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}

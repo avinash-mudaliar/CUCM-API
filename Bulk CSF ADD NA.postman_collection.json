@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "53f6eb24-c991-499b-9db4-d5c47270e3c1",
+		"name": "Bulk CSF ADD NA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12618884",
+		"_collection_link": "https://midpoint.postman.co/workspace/Team-Workspace~54acb2a4-91b0-4162-89e3-12a5c043a198/collection/12618884-53f6eb24-c991-499b-9db4-d5c47270e3c1?action=share&source=collection_link&creator=12618884"
+	},
+	"item": [
+		{
+			"name": "Bulk Add Line",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "tIm5it$n0w",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addLine sequence=\"?\">\r\n         <line>\r\n            <pattern>\\+{{did}}</pattern>\r\n            <routePartitionName uuid=\"?\">INTERNAL-PT</routePartitionName>\r\n            <description>{{fn}} {{ln}} ({{site}})</description>\r\n            <shareLineAppearanceCssName uuid=\"?\">LINE-ALLOW-INTL-CSS</shareLineAppearanceCssName>\r\n             <callForwardAll>\r\n             <callingSearchSpaceName uuid=\"?\">{{site}}-CF-LD-CSS</callingSearchSpaceName>\r\n             </callForwardAll>\r\n            \r\n            <callForwardBusy>\r\n               \r\n               <forwardToVoiceMail>true</forwardToVoiceMail>\r\n               \r\n            </callForwardBusy>\r\n            \r\n            <callForwardBusyInt>\r\n               \r\n               <forwardToVoiceMail>true</forwardToVoiceMail>\r\n\r\n            </callForwardBusyInt>\r\n           \r\n            <callForwardNoAnswer>\r\n               \r\n               <forwardToVoiceMail>true</forwardToVoiceMail>\r\n               \r\n            </callForwardNoAnswer>\r\n            \r\n            <callForwardNoAnswerInt>\r\n               \r\n               <forwardToVoiceMail>true</forwardToVoiceMail>\r\n               \r\n            </callForwardNoAnswerInt>\r\n            \r\n            <callForwardNoCoverage>\r\n               \r\n               <forwardToVoiceMail>true</forwardToVoiceMail>\r\n               \r\n            </callForwardNoCoverage>\r\n            \r\n            <callForwardNoCoverageInt>\r\n              \r\n               <forwardToVoiceMail>true</forwardToVoiceMail>\r\n              \r\n            </callForwardNoCoverageInt>\r\n            \r\n            <callForwardOnFailure>\r\n               \r\n               <forwardToVoiceMail>true</forwardToVoiceMail>\r\n               \r\n            </callForwardOnFailure>\r\n            \r\n            <displayAscii>{{fn}} {{ln}}</displayAscii>\r\n                   <alertingName>{{fn}} {{ln}}</alertingName>\r\n                   <asciiAlertingName>{{fn}} {{ln}}</asciiAlertingName>\r\n                   <voiceMailProfileName uuid=\"?\">Voicemail</voiceMailProfileName>\r\n                  <e164Mask>+{{did}}</e164Mask>\r\n            \r\n            \r\n         </line>\r\n      </ns:addLine>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Add CSF",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "tIm5it$n0w",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:addPhone sequence=\"?\">\r\n         <phone ctiid=\"?\">\r\n            <name>CSF{{userid}}</name>\r\n            <description>{{fn}} {{ln}} ({{site}}) +{{did}}</description>\r\n            <product>Cisco Unified Client Services Framework</product>\r\n            <class>Phone</class>\r\n            <protocol>SIP</protocol>\r\n            <protocolSide>User</protocolSide>\r\n            <callingSearchSpaceName uuid=\"?\">{{site}}-DEVICE-CSS</callingSearchSpaceName>\r\n            <commonDeviceConfigName uuid=\"?\">{{site}}-CDC</commonDeviceConfigName>\r\n            <automatedAlternateRoutingCssName uuid=\"?\">{{site}}-AAR-CSS </automatedAlternateRoutingCssName>\r\n\r\n            <devicePoolName uuid=\"?\">{{site}}-SOFT-PHONES-DP</devicePoolName>\r\n            <sipProfileName>Jabber-Standard SIP Profile</sipProfileName>\r\n\t\t\t<ownerUserName uuid=\"?\">{{userid}}</ownerUserName>\r\n            <digestUser>{{userid}}</digestUser>\r\n            \r\n            <lines>\r\n             \r\n               <line ctiid=\"?\">\r\n                  <index>1</index>\r\n                  \r\n                  <label>{{fn}} {{ln}} - {{4digit}}</label>\r\n                  <display>{{fn}} {{ln}}</display>\r\n                  <callingSearchSpaceName uuid=\"?\">{{site}}-CF-LD-CSS</callingSearchSpaceName>\r\n                  <displayAscii>{{fn}} {{ln}}</displayAscii>\r\n                  <alertingName>{{fn}} {{ln}}</alertingName>\r\n                  <asciiAlertingName>{{fn}} {{ln}}</asciiAlertingName>\r\n                  <voiceMailProfileName uuid=\"?\">Voicemail</voiceMailProfileName>\r\n                  <dirn>\r\n                     <pattern>\\+{{did}}</pattern>\r\n                     <routePartitionName uuid=\"?\">INTERNAL-PT</routePartitionName>\r\n                     </dirn>\r\n                  \r\n                  <e164Mask>+{{did}}</e164Mask>\r\n                   <associatedEndusers>\r\n                     \r\n                     <enduser>\r\n                        <userId>{{userid}}</userId>\r\n                     </enduser>\r\n                  </associatedEndusers>\r\n\r\n                  \r\n               </line>\r\n               \r\n            </lines>\r\n\r\n         </phone>\r\n      </ns:addPhone>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk End User Update",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "tIm5it$n0w",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:updateUser sequence=\"?\">\r\n\r\n\r\n         <userid>{{userid}}</userid>\r\n\r\n         <associatedDevices>\r\n            \r\n            <device>CSF{{userid}}</device>\r\n         </associatedDevices>\r\n         \r\n         <primaryExtension>\r\n            <pattern>\\+{{did}}</pattern>\r\n            \r\n            <routePartitionName>INTERNAL-PT</routePartitionName>\r\n         </primaryExtension>\r\n\r\n         <homeCluster>true</homeCluster>\r\n         \r\n         <imAndPresenceEnable>true</imAndPresenceEnable>\r\n         \r\n         <serviceProfile uuid=\"?\">GROUP-{{dc}}-PHONE-ONLY-SP</serviceProfile>\r\n         \r\n         \r\n      </ns:updateUser>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

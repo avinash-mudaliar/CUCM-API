@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "a860a97f-448a-41b1-b41f-41fa92ac2f6c",
+		"name": "Update Phone w/ex NA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12618884",
+		"_collection_link": "https://midpoint.postman.co/workspace/Team-Workspace~54acb2a4-91b0-4162-89e3-12a5c043a198/collection/12618884-a860a97f-448a-41b1-b41f-41fa92ac2f6c?action=share&source=collection_link&creator=12618884"
+	},
+	"item": [
+		{
+			"name": "Update Phone",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "api",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:updatePhone sequence=\"?\">\r\n         \r\n         <name>SEPDEADDEADDEAD</name>\r\n\r\n         <description>TEST PHONE</description>\r\n         \r\n\r\n         <lines>\r\n           \r\n            <line ctiid=\"?\">\r\n               <index>1</index>\r\n              \r\n               <label>Parameswaran Narayanan</label>\r\n              \r\n               <display>Parameswaran Narayanan</display>\r\n               <dirn>\r\n                  <pattern>\\+918022166686</pattern>\r\n                  <routePartitionName uuid=\"?\">INTERNAL-PT</routePartitionName>\r\n               </dirn>\r\n              \r\n               \r\n            </line>\r\n\r\n         </lines>\r\n        \r\n\r\n      </ns:updatePhone>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Phone Working Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "tIm5it$n0w",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "api",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns=\"http://www.cisco.com/AXL/API/12.5\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <ns:updatePhone sequence=\"?\">\r\n         \r\n         <name>SEPDEADDEADDEAD</name>\r\n\r\n         <description>Open Desk</description>\r\n         \r\n\r\n         <lines>\r\n           \r\n            <line ctiid=\"?\">\r\n               <index>1</index>\r\n              \r\n               <label>Open Desk</label>\r\n              \r\n               <display>Open Desk</display>\r\n             <dirn>\r\n                  <pattern>\\+16084337237</pattern>\r\n                  <routePartitionName uuid=\"?\">INTERNAL-PT</routePartitionName>\r\n               </dirn>  \r\n              \r\n               \r\n            </line>\r\n\r\n         </lines>\r\n        \r\n\r\n      </ns:updatePhone>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>"
+				},
+				"url": {
+					"raw": "{{url}}/axl/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"axl",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
